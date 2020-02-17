@@ -4,14 +4,14 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var guessedSoFar = []
+var guessedSoFar = [];
 
 
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(computerChoice);
  
 function reset(){
-    guessesLeft = 9;
+    guessesLeft = 10;
     guessedSoFar = [];
 }
 
@@ -26,7 +26,7 @@ document.onkeyup = function(event) {
         guessedSoFar = []
         
         alert("you win")
-        
+        reset()
     }
 
     else(userGuess !== computerChoice)
@@ -41,6 +41,7 @@ document.onkeyup = function(event) {
         guessedSoFar = []
 
         alert("sorry, try again!");
+        reset()
 
     }
 
